@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on Manali Gawde</title>
+    <link>https://mmg06.github.io/mmg_portfolio/post/</link>
+    <description>Recent content in Project on Manali Gawde</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Mar 2020 12:00:00 -0500</lastBuildDate><atom:link href="https://mmg06.github.io/mmg_portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 5: Statistical Analysis of Internet Usage in the UK.</title>
+      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-2/</link>
+      <pubDate>Mon, 13 Dec 2021 11:00:59 -0400</pubDate>
+      
+      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-2/</guid>
+      <description>Problem Statement: The purpose of this Report is to discuss the Internet usage in the UK over the years and its impact on the age, gender, ethnicity, disables and economic groups. This finding will benefit the company to decide whether to invest in the country and if the finding is in the company’s favour which group the company should target for the profit.
+You can check the work here:
+Link to Project 5</description>
+    </item>
+    
+    <item>
+      <title>Project 4: Breast Cancer Diagnosis</title>
+      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-4/</link>
+      <pubDate>Sat, 12 Jun 2021 11:14:48 -0400</pubDate>
+      
+      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-4/</guid>
+      <description>I got the dataset from Breast Cancer Wisconsin (Diagnostic) Data Set. It contains 596 rows and 32 columns of tumor shape and specifications. The tumor is classified as benign or malignant based on its geometry and shape. Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, which is type of biopsy procedure. They describe characteristics of the cell nuclei present in the image.</description>
+    </item>
+    
+    <item>
+      <title>Project 3: Bitcoin in E-Sports </title>
+      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-3/</link>
+      <pubDate>Sat, 01 May 2021 11:13:32 -0400</pubDate>
+      
+      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-3/</guid>
+      <description>Why do we need bitcoin in E-sports and how can we infuse bitcoin in pre-existing game?
+The E-Sport market have observed a slightly decline in 2020 due to COVID-19 and all the events and tournaments got cancelled. Which how ever impacted the Player including the stake holder, advertising agencies, sponsors and everyone related to the industry.
+Cryptocurrency and gaming are nothing new to hear. We’ve seen Tron a blockchain ecosystems that will pay you for playing.</description>
+    </item>
+    
+    <item>
+      <title>Project 2: Topic Modelling with LSA and LDA </title>
+      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-5/</link>
+      <pubDate>Sun, 13 Dec 2020 11:15:58 -0400</pubDate>
+      
+      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-5/</guid>
+      <description>What is Topic Modeling ?  Understanding a large amount of text and reading is not humanly possible. Therefore, in order to do this, we require a machine that can do this for us easily and accurately. With the help of NLP (Natural Language Understanding). NLU extracts the meaning from the data from the documents to paragraphs and sentences to words. The most meaningful way is to understand the text is by its topics.</description>
+    </item>
+    
+    <item>
+      <title>Project 1: Stock Market Prediction</title>
+      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-1/</link>
+      <pubDate>Wed, 01 Apr 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-1/</guid>
+      <description>Understanding the Problem Statement Broadly, stock market analysis is divided into two parts – Fundamental Analysis and Technical Analysis.
+Fundamental Analysis involves analyzing the company’s future profitability on the basis of its current business environment and financial performance.
+Technical Analysis, on the other hand, includes reading the charts and using statistical figures to identify the trends in the stock market.
+As you might have guessed, our focus will be on the technical analysis part.</description>
+    </item>
+    
+    <item>
+      <title>Project 6: </title>
+      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-6/</link>
+      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
+      
+      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-6/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

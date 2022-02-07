@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scene on Manali Gawde</title>
+    <link>https://mmg06.github.io/mmg_portfolio/tags/scene/</link>
+    <description>Recent content in scene on Manali Gawde</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Jun 2021 11:14:48 -0400</lastBuildDate><atom:link href="https://mmg06.github.io/mmg_portfolio/tags/scene/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Project 4: Breast Cancer Diagnosis</title>
+      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-4/</link>
+      <pubDate>Sat, 12 Jun 2021 11:14:48 -0400</pubDate>
+      
+      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-4/</guid>
+      <description>I got the dataset from Breast Cancer Wisconsin (Diagnostic) Data Set. It contains 596 rows and 32 columns of tumor shape and specifications. The tumor is classified as benign or malignant based on its geometry and shape. Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, which is type of biopsy procedure. They describe characteristics of the cell nuclei present in the image.</description>
+    </item>
+    
+  </channel>
+</rss>
