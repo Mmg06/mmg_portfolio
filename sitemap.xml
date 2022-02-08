@@ -17,16 +17,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://mmg06.github.io/mmg_portfolio/tags/scene/</loc>
-    <lastmod>2021-06-12T11:14:48-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://mmg06.github.io/mmg_portfolio/tags/</loc>
-    <lastmod>2021-06-12T11:14:48-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://mmg06.github.io/mmg_portfolio/post/chapter-3/</loc>
     <lastmod>2021-05-01T11:13:32-04:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -42,18 +32,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://mmg06.github.io/mmg_portfolio/tags/time-series/</loc>
-    <lastmod>2020-04-01T10:58:08-04:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://mmg06.github.io/mmg_portfolio/post/</loc>
     <lastmod>2020-03-02T12:00:00-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://mmg06.github.io/mmg_portfolio/post/chapter-6/</loc>
-    <lastmod>2017-04-14T11:25:05-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -66,6 +46,10 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://mmg06.github.io/mmg_portfolio/contact/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://mmg06.github.io/mmg_portfolio/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

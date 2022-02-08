@@ -13,9 +13,7 @@
       <pubDate>Mon, 13 Dec 2021 11:00:59 -0400</pubDate>
       
       <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-2/</guid>
-      <description>Problem Statement: The purpose of this Report is to discuss the Internet usage in the UK over the years and its impact on the age, gender, ethnicity, disables and economic groups. This finding will benefit the company to decide whether to invest in the country and if the finding is in the company’s favour which group the company should target for the profit.
-You can check the work here:
-Link to Project 5</description>
+      <description>Problem Statement: The purpose of this Report is to discuss the Internet usage in the UK over the years and its impact on the age, gender, ethnicity, disables and economic groups. This finding will benefit the company to decide whether to invest in the country and if the finding is in the company’s favour which group the company should target for the profit.  You can check the work here:</description>
     </item>
     
     <item>
@@ -24,7 +22,7 @@ Link to Project 5</description>
       <pubDate>Sat, 12 Jun 2021 11:14:48 -0400</pubDate>
       
       <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-4/</guid>
-      <description>I got the dataset from Breast Cancer Wisconsin (Diagnostic) Data Set. It contains 596 rows and 32 columns of tumor shape and specifications. The tumor is classified as benign or malignant based on its geometry and shape. Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, which is type of biopsy procedure. They describe characteristics of the cell nuclei present in the image.</description>
+      <description>This dataset was taken from Breast Cancer Wisconsin (Diagnostic) Data Set. It contains 596 rows and 32 columns of tumor shape and specifications. The tumor is classified as benign or malignant based on its geometry and shape. Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass, which is type of biopsy procedure. They describe characteristics of the cell nuclei present in the image.</description>
     </item>
     
     <item>
@@ -44,7 +42,7 @@ Cryptocurrency and gaming are nothing new to hear. We’ve seen Tron a blockchai
       <pubDate>Sun, 13 Dec 2020 11:15:58 -0400</pubDate>
       
       <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-5/</guid>
-      <description>What is Topic Modeling ?  Understanding a large amount of text and reading is not humanly possible. Therefore, in order to do this, we require a machine that can do this for us easily and accurately. With the help of NLP (Natural Language Understanding). NLU extracts the meaning from the data from the documents to paragraphs and sentences to words. The most meaningful way is to understand the text is by its topics.</description>
+      <description>What is Topic Modeling ?  Understanding a large amount of text and reading is not humanly possible. Therefore, in order to do this, we require a machine that can do this for us easily and accurately. With the help of NLP (Natural Language Understanding). NLU extracts the meaning from the data from the documents to paragraphs and sentences to words. The most meaningful way is to understand the text is by its topics.</description>
     </item>
     
     <item>
@@ -60,21 +58,12 @@ As you might have guessed, our focus will be on the technical analysis part.</de
     </item>
     
     <item>
-      <title>Project 6: </title>
-      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-6/</link>
-      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
-      
-      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Contact</title>
       <link>https://mmg06.github.io/mmg_portfolio/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mmg06.github.io/mmg_portfolio/contact/</guid>
-      <description>E-mail: manali.gawde95@gmail.com</description>
+      <description>   Email ID      manali.gawde95@gmail.com    mmg18@student.le.ac.uk     </description>
     </item>
     
   </channel>
