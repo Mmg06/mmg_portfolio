@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 6: Sales Management using PowerBI | Sagar Bhujbal</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Sales Dashboard and KPI along with SQL ">
+    <meta name="generator" content="Hugo 0.92.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="https://sagar2bhujbal.github.io/SB_portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 6: Sales Management using PowerBI" />
+<meta property="og:description" content="Sales Dashboard and KPI along with SQL " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sagar2bhujbal.github.io/SB_portfolio/post/chapter-6/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-12-28T11:25:05-04:00" />
+<meta property="article:modified_time" content="2021-12-28T11:25:05-04:00" /><meta property="og:site_name" content="Sagar Bhujbal" />
+
+<meta itemprop="name" content="Project 6: Sales Management using PowerBI">
+<meta itemprop="description" content="Sales Dashboard and KPI along with SQL "><meta itemprop="datePublished" content="2021-12-28T11:25:05-04:00" />
+<meta itemprop="dateModified" content="2021-12-28T11:25:05-04:00" />
+<meta itemprop="wordCount" content="911">
+<meta itemprop="keywords" content="PowerBI," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 6: Sales Management using PowerBI"/>
+<meta name="twitter:description" content="Sales Dashboard and KPI along with SQL "/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://sagar2bhujbal.github.io/SB_portfolio/images/P6_Cover.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://sagar2bhujbal.github.io/SB_portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Sagar Bhujbal
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://sagar2bhujbal.github.io/SB_portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://sagar2bhujbal.github.io/SB_portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/sagar2bhujbal/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/sagar2bhujbal" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 6: Sales Management using PowerBI</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Sales Dashboard and KPI along with SQL 
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+      
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://sagar2bhujbal.github.io/SB_portfolio/post/chapter-6/&amp;title=Project%206:%20Sales%20Management%20using%20PowerBI" class="ananke-social-link linkedin no-underline" aria-label="share on LinkedIn">
+        
+        <span class="icon"> <svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
+</span>
+        
+      </a>
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 6: Sales Management using PowerBI</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-12-28T11:25:05-04:00">December 28, 2021</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>In this Project I have used sample database from Microsoft and extracted data required by problem statement
+using SQL queries.Extracted data further loaded into PowerBI for Dashboard.
+This project is consist of 4 steps:</p>
+<ol>
+<li>Business Request and User Stories</li>
+<li>Data Cleansing &amp; Transformation(SQL)</li>
+<li>Data Model creation</li>
+<li>Dashboard</li>
+</ol>
+<p><strong>1. Business Request and User Stories :</strong><br>
+The business request for this data analyst project was an executive sales report for sales managers. Based on the request that was made from the business we following user stories were defined to fulfill delivery and ensure that acceptance criteria’s were maintained throughout the project.
+Following is the mail from Manager.</p>
+<blockquote>
+<p>&quot;
+Hi Sagar,<br>
+I hope you are doing well. We need to improve our internet sales reports and want to move from static report to visual dashboards.
+Essentially, we want to focus it on how much we have sold of what products to which clients and how it has been over time.
+Seeing as each salesperson works on different products and customers it would be beneficial to be able to filter them also.
+We measure our numbers against budget so I added that in spreadsheet so we can compare our values against performance.
+The budget is for 2021 and we usually look 2 years back in time when we do analysis of sales.<br>
+Regards,<br>
+Steve&quot;</p>
+</blockquote>
+<p>I have breadowned this email into user stories.</p>
+<table>
+<thead>
+<tr>
+<th>Sr_No</th>
+<th>As a(role)</th>
+<th>I want(request/demand)</th>
+<th>So that I(user value)</th>
+<th>Acceptance criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Sales Manager</td>
+<td>To get a dashboard overview of internet sales</td>
+<td>Can follow better which customers and products sells the best</td>
+<td>A Power BI dashboard which updates data once a day</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sales Representative</td>
+<td>A detailed overview of Internet Sales per Customers</td>
+<td>Can follow up my customers that buys the most and who we can sell more to</td>
+<td>A Power BI dashboard which allows me to filter data for each customer</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.Data collection Cleansing &amp; Transformation(SQL) :</strong><br>
+For this project data has been downloaded from microsoft <a href="https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&amp;tabs=ssms">website</a>.Once SQL Database instance were downloaded later restored on SSMS.
+<figure><img src="https://sagar2bhujbal.github.io/SB_portfolio/images/P6_fig1.JPG"/><figcaption>
+            <h4>Fig_1:Snapshot of Server Management Studio</h4>
+        </figcaption>
+</figure>
+
+To create the necessary data model for doing analysis and fulfilling the business needs defined in the user stories the following tables were extracted using SQL.
+One data source (sales budgets) were provided in Excel format and were connected in the data model in a later step of the process.
+Below are the SQL statements for cleansing and transforming necessary data.<br>
+<em>DIM Calender</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#75715e">-- Cleansed DIM_Date Table --
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span>
+  [DateKey],
+  [FullDateAlternateKey] <span style="color:#66d9ef">AS</span> Date,
+  <span style="color:#75715e">--[DayNumberOfWeek],
+</span><span style="color:#75715e"></span>  [EnglishDayNameOfWeek] <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">Day</span>,
+  <span style="color:#75715e">--[SpanishDayNameOfWeek],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FrenchDayNameOfWeek],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[DayNumberOfMonth],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[DayNumberOfYear],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[WeekNumberOfYear],
+</span><span style="color:#75715e"></span>  [EnglishMonthName] <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">Month</span>,
+  <span style="color:#66d9ef">Left</span>([EnglishMonthName], <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">AS</span> MonthShort,   <span style="color:#75715e">-- Useful for front end date navigation and front end graphs.
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[SpanishMonthName],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FrenchMonthName],
+</span><span style="color:#75715e"></span>  [MonthNumberOfYear] <span style="color:#66d9ef">AS</span> MonthNo,
+  [CalendarQuarter] <span style="color:#66d9ef">AS</span> Quarter,
+  [CalendarYear] <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">Year</span> <span style="color:#75715e">--[CalendarSemester],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FiscalQuarter],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FiscalYear],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FiscalSemester]
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">FROM</span>
+ [AdventureWorksDW2019].[dbo].[DimDate]
+<span style="color:#66d9ef">WHERE</span>
+  CalendarYear <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2019</span>
+</code></pre></div><p><em>DIM Customer</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#75715e">-- Cleansed DIM_Customers Table --
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span>
+  <span style="color:#66d9ef">c</span>.customerkey <span style="color:#66d9ef">AS</span> CustomerKey,
+  <span style="color:#75715e">--      ,[GeographyKey]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[CustomerAlternateKey]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Title]
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">c</span>.firstname <span style="color:#66d9ef">AS</span> [<span style="color:#66d9ef">First</span> Name],
+  <span style="color:#75715e">--      ,[MiddleName]
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">c</span>.lastname <span style="color:#66d9ef">AS</span> [<span style="color:#66d9ef">Last</span> Name],
+  <span style="color:#66d9ef">c</span>.firstname <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> lastname <span style="color:#66d9ef">AS</span> [<span style="color:#66d9ef">Full</span> Name],
+  <span style="color:#75715e">-- Combined First and Last Name
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[NameStyle]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[BirthDate]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[MaritalStatus]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Suffix]
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">CASE</span> <span style="color:#66d9ef">c</span>.gender <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;M&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Male&#39;</span> <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;F&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Female&#39;</span> <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">AS</span> Gender,
+  <span style="color:#75715e">--      ,[EmailAddress]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[YearlyIncome]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[TotalChildren]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[NumberChildrenAtHome]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[EnglishEducation]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[SpanishEducation]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[FrenchEducation]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[EnglishOccupation]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[SpanishOccupation]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[FrenchOccupation]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[HouseOwnerFlag]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[NumberCarsOwned]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[AddressLine1]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[AddressLine2]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Phone]
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">c</span>.datefirstpurchase <span style="color:#66d9ef">AS</span> DateFirstPurchase,
+  <span style="color:#75715e">--      ,[CommuteDistance]
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">g</span>.city <span style="color:#66d9ef">AS</span> [Customer City] <span style="color:#75715e">-- Joined in Customer City from Geography Table
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">FROM</span>
+  [AdventureWorksDW2019].[dbo].[DimCustomer] <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">c</span>
+  <span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> dbo.dimgeography <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">g</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">g</span>.geographykey <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>.geographykey
+<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>
+  CustomerKey <span style="color:#66d9ef">ASC</span> <span style="color:#75715e">-- Ordered List by CustomerKey
+</span></code></pre></div><p><em>DIM products</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#75715e">-- Cleansed DIM_Products Table --
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span>
+  p.[ProductKey],
+  p.[ProductAlternateKey] <span style="color:#66d9ef">AS</span> ProductItemCode,
+  <span style="color:#75715e">--      ,[ProductSubcategoryKey],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[WeightUnitMeasureCode]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[SizeUnitMeasureCode]
+</span><span style="color:#75715e"></span>  p.[EnglishProductName] <span style="color:#66d9ef">AS</span> [Product Name],
+  ps.EnglishProductSubcategoryName <span style="color:#66d9ef">AS</span> [Sub Category], <span style="color:#75715e">-- Joined in from Sub Category Table
+</span><span style="color:#75715e"></span>  pc.EnglishProductCategoryName <span style="color:#66d9ef">AS</span> [Product Category], <span style="color:#75715e">-- Joined in from Category Table
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[SpanishProductName]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[FrenchProductName]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[StandardCost]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[FinishedGoodsFlag]
+</span><span style="color:#75715e"></span>  p.[Color] <span style="color:#66d9ef">AS</span> [Product Color],
+  <span style="color:#75715e">--      ,[SafetyStockLevel]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ReorderPoint]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ListPrice]
+</span><span style="color:#75715e"></span>  p.[<span style="color:#66d9ef">Size</span>] <span style="color:#66d9ef">AS</span> [Product <span style="color:#66d9ef">Size</span>],
+  <span style="color:#75715e">--      ,[SizeRange]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Weight]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[DaysToManufacture]
+</span><span style="color:#75715e"></span>  p.[ProductLine] <span style="color:#66d9ef">AS</span> [Product Line],
+  <span style="color:#75715e">--     ,[DealerPrice]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Class]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Style]
+</span><span style="color:#75715e"></span>  p.[ModelName] <span style="color:#66d9ef">AS</span> [Product Model Name],
+  <span style="color:#75715e">--      ,[LargePhoto]
+</span><span style="color:#75715e"></span>  p.[EnglishDescription] <span style="color:#66d9ef">AS</span> [Product Description],
+  <span style="color:#75715e">--      ,[FrenchDescription]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ChineseDescription]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ArabicDescription]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[HebrewDescription]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ThaiDescription]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[GermanDescription]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[JapaneseDescription]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[TurkishDescription]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[StartDate],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[EndDate],
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">ISNULL</span> (p.Status, <span style="color:#e6db74">&#39;Outdated&#39;</span>) <span style="color:#66d9ef">AS</span> [Product Status]
+<span style="color:#66d9ef">FROM</span>
+  [AdventureWorksDW2019].[dbo].[DimProduct] <span style="color:#66d9ef">as</span> p
+  <span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> dbo.DimProductSubcategory <span style="color:#66d9ef">AS</span> ps <span style="color:#66d9ef">ON</span> ps.ProductSubcategoryKey <span style="color:#f92672">=</span> p.ProductSubcategoryKey
+  <span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> dbo.DimProductCategory <span style="color:#66d9ef">AS</span> pc <span style="color:#66d9ef">ON</span> ps.ProductCategoryKey <span style="color:#f92672">=</span> pc.ProductCategoryKey
+<span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span>
+  p.ProductKey <span style="color:#66d9ef">asc</span>
+</code></pre></div><p><em>Fact_InternetSales</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Cleansed FACT_InternetSales Table --
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span>
+  [ProductKey],
+  [OrderDateKey],
+  [DueDateKey],
+  [ShipDateKey],
+  [CustomerKey],
+  <span style="color:#75715e">--  ,[PromotionKey]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[CurrencyKey]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[SalesTerritoryKey]
+</span><span style="color:#75715e"></span>  [SalesOrderNumber],
+  <span style="color:#75715e">--  [SalesOrderLineNumber],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[RevisionNumber]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[OrderQuantity],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[UnitPrice],
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[ExtendedAmount]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[UnitPriceDiscountPct]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[DiscountAmount]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[ProductStandardCost]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[TotalProductCost]
+</span><span style="color:#75715e"></span>  [SalesAmount] <span style="color:#75715e">--  ,[TaxAmt]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[Freight]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[CarrierTrackingNumber]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[CustomerPONumber]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[OrderDate]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[DueDate]
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[ShipDate]
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">FROM</span>
+  [AdventureWorksDW2019].[dbo].[FactInternetSales]
+<span style="color:#66d9ef">WHERE</span>
+  <span style="color:#66d9ef">LEFT</span> (OrderDateKey, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#66d9ef">YEAR</span>(GETDATE()) <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span> <span style="color:#75715e">-- Ensures we always only bring two years of date from extraction.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>
+  OrderDateKey <span style="color:#66d9ef">ASC</span>
+</code></pre></div><p><strong>3. Data Model building :</strong><br>
+Below is a screenshot of the data model after cleansed and prepared tables were read into Power BI.</p>
+<p>This data model also shows how FACT_Budget hsa been connected to FACT_InternetSales and other necessary DIM tables.<br>
+<figure><img src="https://sagar2bhujbal.github.io/SB_portfolio/images/P6_fig2.JPG"/><figcaption>
+            <h4>Fig_2:Data Model</h4>
+        </figcaption>
+</figure>
+</p>
+<p><strong>4. Dashboard assemble :</strong><br>
+The finished sales management dashboard with one page with works as a dashboard and overview, with two other pages focused on combining tables for necessary details and visualizations to show sales over time, per customers and per products.<br>
+<a href="https://app.powerbi.com/view?r=eyJrIjoiYjU5NjEzOTAtZmQ5Yy00YTFkLTgzYWUtZWNiYmJiYTA2ODYzIiwidCI6IjM3MWY1N2QyLWZmMzgtNGZlZC1hOGYwLWFhOWVhMDZjYjljMCJ9">Click here to open the dashboard and try it out</a></p>
+<figure><img src="https://sagar2bhujbal.github.io/SB_portfolio/images/P6_fig3.JPG"/><figcaption>
+            <h4>Fig_3:Snapshot of Dashboard</h4>
+        </figcaption>
+</figure>
+
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="https://sagar2bhujbal.github.io/SB_portfolio/tags/powerbi" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">PowerBI</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://sagar2bhujbal.github.io/SB_portfolio/" >
+    &copy;  Sagar Bhujbal 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://www.linkedin.com/in/sagar2bhujbal/" target="_blank" class="linkedin ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }};"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+  
+    <a href="https://github.com/sagar2bhujbal" target="_blank" class="Github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>
