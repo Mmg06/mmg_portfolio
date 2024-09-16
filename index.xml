@@ -8,12 +8,20 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Dec 2021 11:00:59 -0400</lastBuildDate><atom:link href="https://mmg06.github.io/mmg_portfolio/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Project 1: Project Owl Image Processing</title>
+      <link>https://mmg06.github.io/mmg_portfolio/post/chapter-6/</link>
+      <pubDate>Fri, 15 Jul 2016 10:58:08 -0400</pubDate>
+      
+      <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-6/</guid>
+      <description>The aim of the project was to develop an image processing algorithm that would allow us to preprocess fundus images of eyes to highlight the various symptoms of diabetic retinopathy. The project concluded work for this semester with the development and implementation of algorithms to remove errors from the fundus images (such as reflection), highlight hard exudates and blood vessel proliferation. They were implemented using MATLAB. For future work, machine learning algorithms must be developed to be able to identify whether a patient suffers from diabetic retinopathy or to predict whether, in future, he will be afflicted by the same.</description>
+    </item>
+    <item>
       <title>Project 5: Statistical Analysis of Internet Usage in the UK.</title>
       <link>https://mmg06.github.io/mmg_portfolio/post/chapter-2/</link>
       <pubDate>Mon, 13 Dec 2021 11:00:59 -0400</pubDate>
       
       <guid>https://mmg06.github.io/mmg_portfolio/post/chapter-2/</guid>
-      <description>Problem Statement: The purpose of this Report is to discuss the Internet usage in the UK over the years and its impact on the age, gender, ethnicity, disables and economic groups. This finding will benefit the company to decide whether to invest in the country and if the finding is in the company’s favour which group the company should target for the profit.  You can check the work here:</description>
+      <description>Problem Statement: The purpose of this Report is to discuss Internet usage in the UK over the years and its impact on the age, gender, ethnicity, disables and economic groups. This finding will benefit the company to decide whether to invest in the country and if the finding is in the company’s favour which group the company should target for the profit.  You can check the work here:</description>
     </item>
     
     <item>
