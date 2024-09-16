@@ -6,7 +6,7 @@
     
     <title>Project 8: 𝑩𝒂𝒓𝒓𝒊𝒆𝒓 𝑨𝒏𝒂𝒍𝒚𝒔𝒊𝒔 | Manali Gawde</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Sales Dashboard and KPI along with SQL ">
+    <meta name="description" content="𝑪𝒉𝒂𝒏𝒈𝒊𝒏𝒈 𝒃𝒆𝒉𝒂𝒗𝒊𝒐𝒓 𝒊𝒔 𝒍𝒆𝒔𝒔 𝒂 𝒎𝒂𝒕𝒕𝒆𝒓 𝒐𝒇 𝒈𝒊𝒗𝒊𝒏𝒈 𝒑𝒆𝒐𝒑𝒍𝒆 𝒂𝒏𝒂𝒍𝒚𝒔𝒊𝒔 𝒕𝒐 𝒊𝒏𝒇𝒍𝒖𝒆𝒏𝒄𝒆 𝒕𝒉𝒆𝒊𝒓 𝒕𝒉𝒐𝒖𝒈𝒉𝒕𝒔 𝒕𝒉𝒂𝒏 𝒉𝒆𝒍𝒑𝒊𝒏𝒈 𝒕𝒉𝒆𝒎 𝒕𝒐 𝒔𝒆𝒆 𝒂 𝒕𝒓𝒖𝒕𝒉 𝒕𝒐 𝒊𝒏𝒇𝒍𝒖𝒆𝒏𝒄𝒆 𝒕𝒉𝒆𝒊𝒓 𝒇𝒆𝒆𝒍𝒊𝒏𝒈𝒔. – 𝐽𝑜ℎ𝑛 𝐾𝑜𝑡𝑡𝑒𝑟 ">
     <meta name="generator" content="Hugo 0.92.1" />
     
     
@@ -174,14 +174,14 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>In this Project I have used sample database from Microsoft and extracted data required by problem statement
-using SQL queries.Extracted data further loaded into PowerBI for Dashboard.
-This project is consist of 4 steps:</p>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>The following steps were taken to build Barrier Analysis Determinant Classification tool.
+This project is consist of 5 steps:</p>
 <ol>
-<li>Business Request and User Stories</li>
-<li>Data Cleansing &amp; Transformation(SQL)</li>
-<li>Data Model creation</li>
-<li>Dashboard</li>
+<li>1) 𝑫𝒂𝒕𝒂 𝑪𝒐𝒍𝒍𝒆𝒄𝒕𝒊𝒐𝒏: Survey response data was downloaded from an open-source dataset: https://lnkd.in/dngAKQ8c Only text responses were used in the project.</li>
+<li>2) 𝐃𝐚𝐭𝐚 𝐏𝐫𝐞-𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠: This text data was cleaned using different text processing techniques such as stop word removal, Lemmatization etc.</li>
+<li>3) 𝑪𝒍𝒖𝒔𝒕𝒆𝒓𝒊𝒏𝒈:  In this project, I have used clustering and classification to classify the barrier analysis survey data into correct categories. Cleaned text data then clustered using Hugging face pretrained model. An appropriate determinant label was added to each cluster.</li>
+<li>4) 𝑪𝒍𝒂𝒔𝒔𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏 : The research focused on training and testing different classification models such as Random Forest, Linear support vector, Multinomial Naïve bias, and Logistic model. Training the Linear Support vector model is used as a baseline model and trained further to improve accuracy. The 𝐥𝐢𝐧𝐞𝐚𝐫 𝐬𝐮𝐩𝐩𝐨𝐫𝐭 𝐯𝐞𝐜𝐭𝐨𝐫  model showed the 𝐛𝐞𝐬𝐭 by yielding an accuracy of around 80% in classifying the determinants. This research also involves a study to improve the model's accuracy and limitations.</li>
+<li>5) Deployment and Demo: In this Step, the trained model was deployed and used to retrieve in PowerBI.</li>
 </ol>
 <p><strong>1. Business Request and User Stories :</strong><br>
 The business request for this data analyst project was an executive sales report for sales managers. Based on the request that was made from the business we following user stories were defined to fulfill delivery and ensure that acceptance criteria’s were maintained throughout the project.
