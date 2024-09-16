@@ -177,7 +177,7 @@
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>The following steps were taken to build Barrier Analysis Determinant Classification tool.
 This project is consist of 5 steps:</p>
 <ol>
-<li> 𝑫𝒂𝒕𝒂 𝑪𝒐𝒍𝒍𝒆𝒄𝒕𝒊𝒐𝒏: Survey response data was downloaded from an open-source dataset: https://lnkd.in/dngAKQ8c Only text responses were used in the project.</li>
+<li> 𝑫𝒂𝒕𝒂 𝑪𝒐𝒍𝒍𝒆𝒄𝒕𝒊𝒐𝒏: Survey response data was downloaded from an open-source dataset:<a href="https://lnkd.in/dngAKQ8c">website</a>  Only text responses were used in the project.</li>
 <li> 𝐃𝐚𝐭𝐚 𝐏𝐫𝐞-𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠: This text data was cleaned using different text processing techniques such as stop word removal, Lemmatization etc.</li>
 <li> 𝑪𝒍𝒖𝒔𝒕𝒆𝒓𝒊𝒏𝒈:  In this project, I have used clustering and classification to classify the barrier analysis survey data into correct categories. Cleaned text data then clustered using Hugging face pretrained model. An appropriate determinant label was added to each cluster.</li>
 <li> 𝑪𝒍𝒂𝒔𝒔𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏 : The research focused on training and testing different classification models such as Random Forest, Linear support vector, Multinomial Naïve bias, and Logistic model. Training the Linear Support vector model is used as a baseline model and trained further to improve accuracy. The 𝐥𝐢𝐧𝐞𝐚𝐫 𝐬𝐮𝐩𝐩𝐨𝐫𝐭 𝐯𝐞𝐜𝐭𝐨𝐫  model showed the 𝐛𝐞𝐬𝐭 by yielding an accuracy of around 80% in classifying the determinants. This research also involves a study to improve the model's accuracy and limitations.</li>
@@ -187,55 +187,18 @@ This project is consist of 5 steps:</p>
 <figure>
   <img src="https://raw.githubusercontent.com/Mmg06/mmg_portfolio/main/images/project_workflow.jpg" alt="Project Workflow">
   <figcaption>
-    <h4>Fig_1: Project Workflow Studio</h4>
+    <h4>Fig_1: Project Workflow </h4>
   </figcaption>
 </figure>
-The business request for this data analyst project was an executive sales report for sales managers. Based on the request that was made from the business we following user stories were defined to fulfill delivery and ensure that acceptance criteria’s were maintained throughout the project.
-Following is the mail from Manager.</p>
-<blockquote>
-<p>&quot;
-Hi Sagar,<br>
-I hope you are doing well. We need to improve our internet sales reports and want to move from static report to visual dashboards.
-Essentially, we want to focus it on how much we have sold of what products to which clients and how it has been over time.
-Seeing as each salesperson works on different products and customers it would be beneficial to be able to filter them also.
-We measure our numbers against budget so I added that in spreadsheet so we can compare our values against performance.
-The budget is for 2021 and we usually look 2 years back in time when we do analysis of sales.<br>
-Regards,<br>
-Steve&quot;</p>
-</blockquote>
-<p>I have breadowned this email into user stories.</p>
-<table>
-<thead>
-<tr>
-<th>Sr_No</th>
-<th>As a(role)</th>
-<th>I want(request/demand)</th>
-<th>So that I(user value)</th>
-<th>Acceptance criteria</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Sales Manager</td>
-<td>To get a dashboard overview of internet sales</td>
-<td>Can follow better which customers and products sells the best</td>
-<td>A Power BI dashboard which updates data once a day</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Sales Representative</td>
-<td>A detailed overview of Internet Sales per Customers</td>
-<td>Can follow up my customers that buys the most and who we can sell more to</td>
-<td>A Power BI dashboard which allows me to filter data for each customer</td>
-</tr>
-</tbody>
-</table>
-<p><strong>2.Data collection Cleansing &amp; Transformation(SQL) :</strong><br>
-For this project data has been downloaded from microsoft <a href="https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&amp;tabs=ssms">website</a>.Once SQL Database instance were downloaded later restored on SSMS.
-<figure><img src="https://sagar2bhujbal.github.io/SB_portfolio/images/P6_fig1.JPG"/><figcaption>
-            <h4>Fig_1:Snapshot of Server Management Studio</h4>
-        </figcaption>
+</p>
+
+<p><strong>2.Python Libraries :</strong><br>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/Mmg06/mmg_portfolio/main/images/pythonlib.jpg" alt="Project Workflow">
+  <figcaption>
+    <h4>Fig_1: Python Library </h4>
+  </figcaption>
 </figure>
 
 To create the necessary data model for doing analysis and fulfilling the business needs defined in the user stories the following tables were extracted using SQL.
