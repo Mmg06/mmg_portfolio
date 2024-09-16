@@ -201,162 +201,20 @@ This project is consist of 5 steps:</p>
   </figcaption>
 </figure>
 
-To create the necessary data model for doing analysis and fulfilling the business needs defined in the user stories the following tables were extracted using SQL.
-One data source (sales budgets) were provided in Excel format and were connected in the data model in a later step of the process.
-Below are the SQL statements for cleansing and transforming necessary data.<br>
-<em>DIM Calender</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#75715e">-- Cleansed DIM_Date Table --
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span>
-  [DateKey],
-  [FullDateAlternateKey] <span style="color:#66d9ef">AS</span> Date,
-  <span style="color:#75715e">--[DayNumberOfWeek],
-</span><span style="color:#75715e"></span>  [EnglishDayNameOfWeek] <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">Day</span>,
-  <span style="color:#75715e">--[SpanishDayNameOfWeek],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FrenchDayNameOfWeek],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[DayNumberOfMonth],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[DayNumberOfYear],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[WeekNumberOfYear],
-</span><span style="color:#75715e"></span>  [EnglishMonthName] <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">Month</span>,
-  <span style="color:#66d9ef">Left</span>([EnglishMonthName], <span style="color:#ae81ff">3</span>) <span style="color:#66d9ef">AS</span> MonthShort,   <span style="color:#75715e">-- Useful for front end date navigation and front end graphs.
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[SpanishMonthName],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FrenchMonthName],
-</span><span style="color:#75715e"></span>  [MonthNumberOfYear] <span style="color:#66d9ef">AS</span> MonthNo,
-  [CalendarQuarter] <span style="color:#66d9ef">AS</span> Quarter,
-  [CalendarYear] <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">Year</span> <span style="color:#75715e">--[CalendarSemester],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FiscalQuarter],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FiscalYear],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--[FiscalSemester]
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">FROM</span>
- [AdventureWorksDW2019].[dbo].[DimDate]
-<span style="color:#66d9ef">WHERE</span>
-  CalendarYear <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">2019</span>
-</code></pre></div><p><em>DIM Customer</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#75715e">-- Cleansed DIM_Customers Table --
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span>
-  <span style="color:#66d9ef">c</span>.customerkey <span style="color:#66d9ef">AS</span> CustomerKey,
-  <span style="color:#75715e">--      ,[GeographyKey]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[CustomerAlternateKey]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Title]
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">c</span>.firstname <span style="color:#66d9ef">AS</span> [<span style="color:#66d9ef">First</span> Name],
-  <span style="color:#75715e">--      ,[MiddleName]
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">c</span>.lastname <span style="color:#66d9ef">AS</span> [<span style="color:#66d9ef">Last</span> Name],
-  <span style="color:#66d9ef">c</span>.firstname <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> lastname <span style="color:#66d9ef">AS</span> [<span style="color:#66d9ef">Full</span> Name],
-  <span style="color:#75715e">-- Combined First and Last Name
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[NameStyle]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[BirthDate]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[MaritalStatus]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Suffix]
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">CASE</span> <span style="color:#66d9ef">c</span>.gender <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;M&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Male&#39;</span> <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;F&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;Female&#39;</span> <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">AS</span> Gender,
-  <span style="color:#75715e">--      ,[EmailAddress]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[YearlyIncome]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[TotalChildren]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[NumberChildrenAtHome]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[EnglishEducation]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[SpanishEducation]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[FrenchEducation]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[EnglishOccupation]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[SpanishOccupation]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[FrenchOccupation]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[HouseOwnerFlag]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[NumberCarsOwned]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[AddressLine1]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[AddressLine2]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Phone]
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">c</span>.datefirstpurchase <span style="color:#66d9ef">AS</span> DateFirstPurchase,
-  <span style="color:#75715e">--      ,[CommuteDistance]
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">g</span>.city <span style="color:#66d9ef">AS</span> [Customer City] <span style="color:#75715e">-- Joined in Customer City from Geography Table
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">FROM</span>
-  [AdventureWorksDW2019].[dbo].[DimCustomer] <span style="color:#66d9ef">as</span> <span style="color:#66d9ef">c</span>
-  <span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> dbo.dimgeography <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">g</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">g</span>.geographykey <span style="color:#f92672">=</span> <span style="color:#66d9ef">c</span>.geographykey
-<span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>
-  CustomerKey <span style="color:#66d9ef">ASC</span> <span style="color:#75715e">-- Ordered List by CustomerKey
-</span></code></pre></div><p><em>DIM products</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#75715e">-- Cleansed DIM_Products Table --
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span>
-  p.[ProductKey],
-  p.[ProductAlternateKey] <span style="color:#66d9ef">AS</span> ProductItemCode,
-  <span style="color:#75715e">--      ,[ProductSubcategoryKey],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[WeightUnitMeasureCode]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[SizeUnitMeasureCode]
-</span><span style="color:#75715e"></span>  p.[EnglishProductName] <span style="color:#66d9ef">AS</span> [Product Name],
-  ps.EnglishProductSubcategoryName <span style="color:#66d9ef">AS</span> [Sub Category], <span style="color:#75715e">-- Joined in from Sub Category Table
-</span><span style="color:#75715e"></span>  pc.EnglishProductCategoryName <span style="color:#66d9ef">AS</span> [Product Category], <span style="color:#75715e">-- Joined in from Category Table
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[SpanishProductName]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[FrenchProductName]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[StandardCost]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[FinishedGoodsFlag]
-</span><span style="color:#75715e"></span>  p.[Color] <span style="color:#66d9ef">AS</span> [Product Color],
-  <span style="color:#75715e">--      ,[SafetyStockLevel]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ReorderPoint]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ListPrice]
-</span><span style="color:#75715e"></span>  p.[<span style="color:#66d9ef">Size</span>] <span style="color:#66d9ef">AS</span> [Product <span style="color:#66d9ef">Size</span>],
-  <span style="color:#75715e">--      ,[SizeRange]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Weight]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[DaysToManufacture]
-</span><span style="color:#75715e"></span>  p.[ProductLine] <span style="color:#66d9ef">AS</span> [Product Line],
-  <span style="color:#75715e">--     ,[DealerPrice]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Class]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[Style]
-</span><span style="color:#75715e"></span>  p.[ModelName] <span style="color:#66d9ef">AS</span> [Product Model Name],
-  <span style="color:#75715e">--      ,[LargePhoto]
-</span><span style="color:#75715e"></span>  p.[EnglishDescription] <span style="color:#66d9ef">AS</span> [Product Description],
-  <span style="color:#75715e">--      ,[FrenchDescription]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ChineseDescription]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ArabicDescription]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[HebrewDescription]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[ThaiDescription]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[GermanDescription]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[JapaneseDescription]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[TurkishDescription]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[StartDate],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--      ,[EndDate],
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">ISNULL</span> (p.Status, <span style="color:#e6db74">&#39;Outdated&#39;</span>) <span style="color:#66d9ef">AS</span> [Product Status]
-<span style="color:#66d9ef">FROM</span>
-  [AdventureWorksDW2019].[dbo].[DimProduct] <span style="color:#66d9ef">as</span> p
-  <span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> dbo.DimProductSubcategory <span style="color:#66d9ef">AS</span> ps <span style="color:#66d9ef">ON</span> ps.ProductSubcategoryKey <span style="color:#f92672">=</span> p.ProductSubcategoryKey
-  <span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> dbo.DimProductCategory <span style="color:#66d9ef">AS</span> pc <span style="color:#66d9ef">ON</span> ps.ProductCategoryKey <span style="color:#f92672">=</span> pc.ProductCategoryKey
-<span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span>
-  p.ProductKey <span style="color:#66d9ef">asc</span>
-</code></pre></div><p><em>Fact_InternetSales</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- Cleansed FACT_InternetSales Table --
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span>
-  [ProductKey],
-  [OrderDateKey],
-  [DueDateKey],
-  [ShipDateKey],
-  [CustomerKey],
-  <span style="color:#75715e">--  ,[PromotionKey]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[CurrencyKey]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[SalesTerritoryKey]
-</span><span style="color:#75715e"></span>  [SalesOrderNumber],
-  <span style="color:#75715e">--  [SalesOrderLineNumber],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[RevisionNumber]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[OrderQuantity],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[UnitPrice],
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[ExtendedAmount]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[UnitPriceDiscountPct]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[DiscountAmount]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[ProductStandardCost]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[TotalProductCost]
-</span><span style="color:#75715e"></span>  [SalesAmount] <span style="color:#75715e">--  ,[TaxAmt]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[Freight]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[CarrierTrackingNumber]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[CustomerPONumber]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[OrderDate]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[DueDate]
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">--  ,[ShipDate]
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">FROM</span>
-  [AdventureWorksDW2019].[dbo].[FactInternetSales]
-<span style="color:#66d9ef">WHERE</span>
-  <span style="color:#66d9ef">LEFT</span> (OrderDateKey, <span style="color:#ae81ff">4</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#66d9ef">YEAR</span>(GETDATE()) <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span> <span style="color:#75715e">-- Ensures we always only bring two years of date from extraction.
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span>
-  OrderDateKey <span style="color:#66d9ef">ASC</span>
-</code></pre></div><p><strong>3. Data Model building :</strong><br>
-Below is a screenshot of the data model after cleansed and prepared tables were read into Power BI.</p>
-<p>This data model also shows how FACT_Budget hsa been connected to FACT_InternetSales and other necessary DIM tables.<br>
-<figure><img src="https://sagar2bhujbal.github.io/SB_portfolio/images/P6_fig2.JPG"/><figcaption>
-            <h4>Fig_2:Data Model</h4>
-        </figcaption>
+</code></pre></div><p><strong>3. Analysis :</strong><br>
+Below is a screenshot of results for Linear SVM model on Test dataset .</p>
+
+<figure>
+  <img src="https://raw.githubusercontent.com/Mmg06/mmg_portfolio/main/images/SVM.jpg" alt="SVM">
+  <figcaption>
+    <h4>Fig_1: SVM test model </h4>
+  </figcaption>
+</figure>
+<figure>
+  <img src="https://raw.githubusercontent.com/Mmg06/mmg_portfolio/main/images/wordcount.jpg" alt="Wordcount">
+  <figcaption>
+    <h4>Fig_1: Wordcount </h4>
+  </figcaption>
 </figure>
 </p>
 <p><strong>4. Dashboard assemble :</strong><br>
