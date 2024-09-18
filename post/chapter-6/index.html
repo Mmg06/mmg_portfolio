@@ -164,7 +164,7 @@
   </div>
 
 
-      <h1 class="f1 athelas mt3 mb1">Project 1: Project Owl Image Processing</h1>
+      <h1 class="f1 athelas mt3 mb1">Project 6: Project Owl Image Processing</h1>
       
       
       
@@ -174,9 +174,7 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>The aim of the project was to develop an image processing algorithm that would allow us to preprocess fundus images of eyes to highlight the various symptoms of diabetic retinopathy. The project concluded work for this semester with the development and implementation of algorithms to remove errors from the fundus images (such as reflection), highlight hard exudates and blood vessel proliferation. They were implemented using MATLAB. For future work, machine learning algorithms must be developed to be able to identify whether a patient suffers from diabetic retinopathy or to predict whether, in future, he will be afflicted by the same. But so far, this exceeds the reach of this study. Several new techniques including the usage of the Kirsch operator in detecting blood vessel proliferation were developed as part of the project. In addition, new algorithms were developed to remove reflections from initial fundus images which are an unfortunate result of using cheap and readily available fundus cameras. Thus, this project aims at developing highly robust algorithms which can detect diabetic retinopathy symptoms and highlight them in fundus images of very poor quality. Thus, the extent of this study is to preprocess images to highlight diagnostic signs of the disease. These images can later be passed through machine learning code to identify the disease or they can even be checked by a physician who will thereby be more easily able to make an accurate diagnosis- thus reducing room for human error.
-For the step involving the removal of reflections from initial fundus image we used two pattern recognition algorithms namely speeded up robust features (SURF) and scale-invariant feature transform (SIFT), which were used to plot similar looking patterns in the two photos of the fundus. We then took the vectors of pattern from the two images, and then took the average angle of both relative vectors. Then to finally overlay one image on top the other we rotate one image and warp both the images.
-For the step involving removing of the exudates, we first analyzed the fundus images and got to finding the plane with the most contrast to give a better distinction of the objects in the images with the background. The red plane had the least contrast. The blue or green channel had more. Green turned out to be the best. So further we processed the green channel of the image and arrived at a binary image. We further tried to find the convex hull of the binary image. Then we measured the area of the white portion(exudates) which when compared with photo of an earlier date can be used to check if the condition has improved or deteriorated.
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>The aim of the project was to develop an image processing algorithm that would allow us to preprocess fundus images of eyes to highlight the various symptoms of diabetic retinopathy. The project concluded work for this semester with the development and implementation of algorithms to remove errors from the fundus images (such as reflection), highlight hard exudates and blood vessel proliferation. They were implemented using MATLAB. 
 <figure><img src="https://sagar2bhujbal.github.io/SB_portfolio/images/P1_img1.jpg"/><figcaption>
             <h4>Problem</h4>
         </figcaption>
